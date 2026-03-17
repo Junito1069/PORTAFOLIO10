@@ -1,0 +1,291 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Inter',sans-serif;
+background:#0f0f11;
+color:white;
+}
+
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 5%;
+}
+
+.logo{
+font-size:22px;
+font-weight:700;
+}
+
+.navbar ul{
+display:flex;
+gap:25px;
+list-style:none;
+}
+
+.navbar a{
+color:white;
+text-decoration:none;
+transition:0.3s;
+}
+
+.navbar a:hover{
+color:#6C63FF;
+}
+
+.hero{
+min-height:80vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:40px 20px;
+}
+
+.hero h1{
+font-size:60px;
+max-width:800px;
+}
+
+.hero span{
+color:#6C63FF;
+}
+
+.hero p{
+margin-top:20px;
+color:#aaa;
+}
+
+.cta{
+margin-top:30px;
+padding:15px 30px;
+background:#6C63FF;
+border:none;
+border-radius:10px;
+color:white;
+cursor:pointer;
+}
+
+.featured-products{
+padding:80px 5%;
+}
+
+.product-list{
+position:relative;
+display:flex;
+flex-direction:column;
+gap:80px;
+}
+
+/* EFECTO WIX STACK */
+
+.product-item{
+position:sticky;
+top:120px;
+display:flex;
+gap:40px;
+align-items:center;
+background:#1a1a1d;
+border-radius:20px;
+padding:30px;
+transition:0.6s;
+}
+
+.product-item:hover{
+transform:scale(1.03);
+}
+
+.product-item img{
+width:600px;
+max-width:100%;
+border-radius:15px;
+}
+
+.product-info button{
+margin-top:20px;
+padding:12px 25px;
+background:#6C63FF;
+border:none;
+border-radius:8px;
+color:white;
+cursor:pointer;
+}
+
+footer{
+text-align:center;
+padding:40px;
+color:#777;
+}
+
+/* WHATSAPP */
+
+.whatsapp-float{
+position:fixed;
+bottom:25px;
+right:25px;
+width:60px;
+height:60px;
+background:#25D366;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+cursor:pointer;
+}
+
+.whatsapp-float img{
+width:32px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+.product-item{
+flex-direction:column;
+text-align:center;
+}
+
+.hero h1{
+font-size:38px;
+}
+
+}.pricing{
+
+padding:100px 5%;
+
+text-align:center;
+
+}
+
+.pricing h2{
+
+font-size:40px;
+
+margin-bottom:50px;
+
+}
+
+.pricing-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+gap:30px;
+
+}
+
+.price-card{
+
+background:#1a1a1d;
+
+padding:40px;
+
+border-radius:20px;
+
+transition:0.4s;
+
+box-shadow:0 10px 40px rgba(0,0,0,0.4);
+
+}
+
+.price-card:hover{
+
+transform:translateY(-10px) scale(1.03);
+
+}
+
+.price{
+
+font-size:30px;
+
+color:#6C63FF;
+
+margin:20px 0;
+
+font-weight:700;
+
+}
+
+.price-card ul{
+
+list-style:none;
+
+margin-top:20px;
+
+}
+
+.price-card li{
+
+margin:10px 0;
+
+color:#bbb;
+
+}
+
+.price-card button{
+
+margin-top:25px;
+
+padding:12px 25px;
+
+border:none;
+
+border-radius:10px;
+
+background:#6C63FF;
+
+color:white;
+
+cursor:pointer;
+
+}
+
+.extras{
+
+margin-top:60px;
+
+display:flex;
+
+gap:30px;
+
+justify-content:center;
+
+flex-wrap:wrap;
+
+}
+
+.extra-card{
+
+background:#1a1a1d;
+
+padding:30px;
+
+border-radius:15px;
+
+width:260px;
+
+}
+
+.pricing-footer{
+
+margin-top:60px;
+
+display:flex;
+
+justify-content:center;
+
+gap:40px;
+
+flex-wrap:wrap;
+
+color:#aaa;
+
+}
