@@ -301,8 +301,68 @@
           }
         };
 
+        const updateEquipamaxProject = () => {
+          const projectWrap = document.querySelector('section[data-framer-name="Project"] [data-framer-name="Featured Project Wrap"]');
+          if (!projectWrap) return;
+
+          let project = projectWrap.querySelector('[data-local-project-key="equipamax"]');
+          if (!project) {
+            const template = projectWrap.querySelector("#featured-project-4");
+            if (!template) return;
+
+            project = template.cloneNode(true);
+            project.id = "featured-project-5";
+            project.dataset.localProjectKey = "equipamax";
+            project.setAttribute("data-framer-name", "Featured Project - 5");
+
+            const projectContainer = project.querySelector('[id*="-project-"]');
+            if (projectContainer) projectContainer.id = "equipamax-project";
+            projectWrap.append(project);
+          }
+
+          for (const cover of project.querySelectorAll('a[data-framer-name="Project Cover"]')) {
+            const title = cover.querySelector("h2, h3");
+            if (title && title.textContent.trim() !== "EQUIPAMAX") title.textContent = "EQUIPAMAX";
+
+            const category = cover.querySelector(".framer-1rmvwl7 p");
+            if (category && category.textContent.trim() !== "E-commerce / Web Development") {
+              category.textContent = "E-commerce / Web Development";
+            }
+
+            const href = "https://equipamax.es";
+            if (cover.getAttribute("href") !== href) cover.setAttribute("href", href);
+            if (cover.getAttribute("target") !== "_blank") cover.setAttribute("target", "_blank");
+            if (cover.getAttribute("rel") !== "noopener noreferrer") {
+              cover.setAttribute("rel", "noopener noreferrer");
+            }
+
+            const image = cover.querySelector("img");
+            if (image) {
+              if (image.getAttribute("src") !== "./equipamax.png") image.setAttribute("src", "./equipamax.png");
+              image.alt = "EQUIPAMAX";
+              if (image.hasAttribute("srcset")) image.removeAttribute("srcset");
+            }
+          }
+
+          const description = "Tienda profesional de suministros y equipos.";
+          for (const text of project.querySelectorAll(".framer-m8h9u9 p, .framer-ldojh2 p")) {
+            if (text.textContent.trim() !== description) text.textContent = description;
+          }
+        };
+
         document.addEventListener("framer:pageview", updateMundoContactoProject);
         window.addEventListener("resize", updateMundoContactoProject);
+        const main = document.querySelector("#main");
+        if (main) {
+          new MutationObserver(updateEquipamaxProject).observe(main, {
+            subtree: true,
+            childList: true,
+            characterData: true
+          });
+        }
+        document.addEventListener("framer:pageview", updateEquipamaxProject);
+        window.addEventListener("resize", updateEquipamaxProject);
+        updateEquipamaxProject();
       })();
     </script>
 </body>
